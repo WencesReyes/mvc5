@@ -1,0 +1,42 @@
+﻿
+@using mvc_project.Models.Pokemon;
+
+@{
+    ViewBag.Title = "Pokemons";
+}
+
+
+@model List<Pokemon>
+
+<main>
+    <h2>List of pokemon</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Pokemon
+                </th>
+                <th>
+                    Url
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var pokemon in @Model)
+            {
+                var trClass = pokemon.Name.Length > 8 ? "bg-warning" : string.Empty;
+
+                <tr class="@trClass">
+                    <td>
+                        @pokemon.Name
+                    </td>
+                    <td>
+                        @pokemon.Url
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</main>
+

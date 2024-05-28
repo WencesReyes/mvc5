@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "My information";
+}
+
+<main>
+    <h3>My age is @ViewBag.Age</h3>
+
+    <section class="container">
+
+        <form action="/post/post" method="post">
+            <input type="number" id="age" name="age" />
+
+            <input type="submit" value="Send" />
+        </form>
+
+    </section>
+</main>
+
