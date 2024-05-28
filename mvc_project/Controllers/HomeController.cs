@@ -26,5 +26,20 @@ namespace mvc_project.Controllers
 
             return View();
         }
+
+        //public JsonResult ReturningJson()
+        //{
+        //    return Json(new { Name = "wenceslao" }, JsonRequestBehavior.AllowGet);
+        //}
+
+        //public ActionResult Redirecting()
+        //{
+        //    // return Redirect("https://www.google.com");
+
+        //    // return RedirectToAction("Index");
+
+        //    // Needs to pass route name that is configured in RouteConfig.cs
+        //    // return RedirectToRoute("Example");
+        //}
     }
 }
