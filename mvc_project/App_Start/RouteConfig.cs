@@ -13,6 +13,14 @@ namespace mvc_project
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapMvcAttributeRoutes();
+
+            routes.MapRoute(
+                name: "FruitName",
+                url: "FruitName/{fruitName}",
+                defaults: new { controller = "Fruit", action = "FruitName" }
+            );
+
             routes.MapRoute(
                 name: "Example",
                 url: "Example",

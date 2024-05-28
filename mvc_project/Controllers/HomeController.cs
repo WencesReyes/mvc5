@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace mvc_project.Controllers
 {
@@ -41,5 +37,22 @@ namespace mvc_project.Controllers
         //    // Needs to pass route name that is configured in RouteConfig.cs
         //    // return RedirectToRoute("Example");
         //}
+
+        //public ActionResult ReturningStatusCode()
+        //{
+        //    return new HttpStatusCodeResult(HttpStatusCode.MovedPermanently, "moved test");
+        //}
+
+        //public ActionResult ReturningFile()
+        //{
+        //    var path = Server.MapPath("~/Files/Recibo-Abr.pdf");
+
+        //    return File(path, "application/pdf", "recibo.pdf");
+        //}
+
+        public ActionResult UsingQueryParams(string name, int age)
+        {
+            return Content($"Nombre: {name}, Age: {age}");
+        }
     }
 }
