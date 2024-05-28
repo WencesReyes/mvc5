@@ -16,7 +16,7 @@ namespace mvc_project
             routes.MapRoute(
                 name: "Example",
                 url: "Example",
-                defaults: new { controller = "Home", action = "Contact" }
+                defaults: new { controller = "Home", action = "About" }
             );
 
             routes.MapRoute(
