@@ -6,6 +6,8 @@ namespace mvc_project.App_Start
     using System.Reflection;
     using System.Web.Mvc;
     using Microsoft.Extensions.DependencyInjection;
+    using mvc_project.Repositories;
+    using mvc_project.Services;
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
@@ -34,6 +36,9 @@ namespace mvc_project.App_Start
             var serviceProvider = new ServiceCollection().AddHttpClient().BuildServiceProvider();
             container.RegisterSingleton(() => serviceProvider.GetRequiredService<IHttpClientFactory>());
             container.ContainerScope.RegisterForDisposal(serviceProvider);
+
+            container.Register<IMovieRepository, MovieRepository>(Lifestyle.Scoped);
+            container.Register<IMovieService, MovieService>(Lifestyle.Scoped);
         }
     }
 }
