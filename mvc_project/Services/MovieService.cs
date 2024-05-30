@@ -18,5 +18,10 @@ namespace mvc_project.Services
         {
             return await _movieRepository.GetAllAsync();
         }
+
+        public async Task<Movie> GetByIdAsync(int id)
+        {
+            return await _movieRepository.GetByIdAsync(id);
+        }
     }
 }

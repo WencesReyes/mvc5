@@ -257,6 +257,10 @@
     <Content Include="Views\ViewBagData\Index.cshtml" />
     <Content Include="Views\Pokemon\Index.cshtml" />
     <Content Include="Views\Movie\Index.cshtml" />
+    <Content Include="Views\Movie\Details.cshtml" />
+    <Content Include="Views\Home\ChildInformation.cshtml" />
+    <Content Include="Views\Movie\DisplayTemplates\Movie.cshtml" />
+    <Content Include="Views\Movie\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

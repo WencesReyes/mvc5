@@ -1,0 +1,26 @@
+﻿@using mvc_project.Entities;
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@model Movie
+
+<main>
+    @using (Html.BeginForm())
+    {
+        @*<div>
+            @Html.LabelFor(model => model.Name)
+            @Html.EditorFor(model => model.Name)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Category)
+            @Html.EditorFor(model => model.Category)
+        </div>*@
+
+        @Html.EditorForModel();
+
+        <input type="submit"  value="Send values"/>
+    }
+</main>
+

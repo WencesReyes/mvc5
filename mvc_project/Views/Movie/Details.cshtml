@@ -1,0 +1,22 @@
+﻿@using mvc_project.Entities;
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@model Movie
+
+<h2>Details</h2>
+
+<main>
+    <section class="row">
+        <div class="col-4">
+            @Model.Name
+        </div>
+        <div class="col-4">
+            @Model.Category
+        </div>
+    </section>
+</main>
+
+@Html.Display("Movie")

@@ -28,6 +28,9 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
+
+        @{Html.RenderAction("ChildInformation", "Home");}
+
         <footer>
             <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
         </footer>

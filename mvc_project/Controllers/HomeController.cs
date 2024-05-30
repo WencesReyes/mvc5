@@ -23,6 +23,14 @@ namespace mvc_project.Controllers
             return View();
         }
 
+        [ChildActionOnly]
+        public ActionResult ChildInformation()
+        {
+            ViewBag.Message = "Child Information.";
+
+            return View();
+        }
+
         //public JsonResult ReturningJson()
         //{
         //    return Json(new { Name = "wenceslao" }, JsonRequestBehavior.AllowGet);

@@ -7,5 +7,6 @@ namespace mvc_project.Services
     public interface IMovieService
     {
         Task<IEnumerable<Movie>> GetAllAsync();
+        Task<Movie> GetByIdAsync(int id);
     }
 }

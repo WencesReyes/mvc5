@@ -1,0 +1,17 @@
+﻿@using mvc_project.Entities 
+
+@{
+    Layout = null;
+}
+
+@model Movie
+
+<div>
+    @Html.LabelFor(model => model.Name, new { @class = "fw-bold" }):
+    @Html.DisplayFor(model => model.Name)
+</div>
+
+<div>
+    @Html.LabelFor(model => model.Category, new { @class = "fw-bold" }):
+    @Html.DisplayFor(model => model.Category)
+</div>

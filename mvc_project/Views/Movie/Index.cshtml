@@ -41,6 +41,18 @@
                     <td>
                         @inBillboard
                     </td>
+                    <td>
+                        @Html.ActionLink(
+                            "Detalle",
+                            "Details",
+                            "Movie",
+                            new 
+                            { 
+                                id = movie.Id,
+                                age = 25
+                            },
+                            new { @class = "btn btn-info" })
+                    </td>
                 </tr>
             }
         </tbody>
