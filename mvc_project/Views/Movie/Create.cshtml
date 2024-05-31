@@ -1,26 +1,68 @@
-﻿@using mvc_project.Entities;
+﻿@using mvc_project.Models.Movie;
 
 @{
     ViewBag.Title = "Create";
 }
 
-@model Movie
+@model CreateUpdateMovie
 
-<main>
-    @using (Html.BeginForm())
+<main class="container">
+
+    @using (Html.BeginForm(
+        "Create",
+        "Movie",
+        FormMethod.Post,
+        new { @class = "row" }
+        ))
     {
-        @*<div>
-            @Html.LabelFor(model => model.Name)
-            @Html.EditorFor(model => model.Name)
+        @Html.AntiForgeryToken()
+
+        @Html.HiddenFor(model => model.Id)
+
+        @*@Html.EditorForModel();*@
+
+        <div class="mb-3 col-12">
+            @Html.LabelFor(
+                model => model.Name,
+                new { @class = "form-label" })
+
+            @Html.TextBoxFor(
+                model => model.Name,
+                new { @class = "form-control" })
+
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
         </div>
-        <div>
-            @Html.LabelFor(model => model.Category)
-            @Html.EditorFor(model => model.Category)
-        </div>*@
 
-        @Html.EditorForModel();
+        <div class="mb-3 col-12">
+            @Html.LabelFor(model =>
+                model.Category,
+                new { @class = "form-label" })
 
-        <input type="submit"  value="Send values"/>
+            @Html.EditorFor(model =>
+                model.Category,
+                new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-12 mb-3">
+            <div class="form-check">
+
+                @Html.EditorFor(model =>
+                    model.InBillboard,
+                    new { htmlAttributes = new { @class = "form-check-input" } })
+
+                @Html.LabelFor(model =>
+                    model.InBillboard,
+                    new { @class = "form-check-label" })
+
+                @Html.ValidationMessageFor(model => model.InBillboard, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-3">
+            <input type="submit" class="btn btn-outline-primary" value="Send values" />
+        </div>
     }
 </main>
 

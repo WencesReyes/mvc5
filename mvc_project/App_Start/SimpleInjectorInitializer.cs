@@ -6,6 +6,7 @@ namespace mvc_project.App_Start
     using System.Reflection;
     using System.Web.Mvc;
     using Microsoft.Extensions.DependencyInjection;
+    using mvc_project.DbContexts;
     using mvc_project.Repositories;
     using mvc_project.Services;
     using SimpleInjector;
@@ -39,6 +40,8 @@ namespace mvc_project.App_Start
 
             container.Register<IMovieRepository, MovieRepository>(Lifestyle.Scoped);
             container.Register<IMovieService, MovieService>(Lifestyle.Scoped);
+            container.Register<AppDbContext>(Lifestyle.Scoped);
+            container.Register<IUnitOfWork, AppDbContext>(Lifestyle.Scoped);
         }
     }
 }

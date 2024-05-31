@@ -46,10 +46,20 @@
                             "Detalle",
                             "Details",
                             "Movie",
-                            new 
-                            { 
+                            new
+                            {
                                 id = movie.Id,
                                 age = 25
+                            },
+                            new { @class = "btn btn-info" })
+
+                        @Html.ActionLink(
+                            "Editar",
+                            "Create",
+                            "Movie",
+                            new
+                            {
+                                id = movie.Id
                             },
                             new { @class = "btn btn-info" })
                     </td>

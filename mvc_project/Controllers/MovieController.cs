@@ -1,4 +1,4 @@
-﻿using mvc_project.Entities;
+﻿using mvc_project.Models.Movie;
 using mvc_project.Services;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -30,8 +30,37 @@ namespace mvc_project.Controllers
             return View(movie);
         }
 
-        public ActionResult Create(Movie movie)
+        [HttpGet]
+        public async Task<ActionResult> Create(int? id)
         {
+            if (id is null)
+            {
+                return View();
+            }
+
+            var movie = await _movieService.GetByIdAsync(id.Value);
+
+            return View((CreateUpdateMovie)movie);
+        }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public async Task<ActionResult> Create(CreateUpdateMovie movie)
+        {
+            if (ModelState.IsValid) 
+            {
+                if (movie.Id is null) 
+                {
+                    await _movieService.AddAsync(movie);
+                }
+                else
+                {
+                    await _movieService.UpdateAsync(movie);
+                }
+
+                return RedirectToAction("Index");
+            }
+
             return View(movie);
         }
     }

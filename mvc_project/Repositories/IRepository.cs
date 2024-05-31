@@ -7,5 +7,6 @@ namespace mvc_project.Repositories
     {
         Task<IEnumerable<T>> GetAllAsync();
         Task<T> GetByIdAsync(int id);
+        void AddOrUpdate(T entity);
     }
 }
